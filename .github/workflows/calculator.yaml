@@ -1,0 +1,21 @@
+name: Calculator
+
+on:
+  push:
+    branches:
+      -  main
+
+
+jobs:
+  my_second_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking the repository
+        uses: actions/checkout@v4
+
+      - name: Install nodejs
+        run: sudo apt install nodejs
+
+      - name: Start test
+        run: nodejs test_calculator.js
