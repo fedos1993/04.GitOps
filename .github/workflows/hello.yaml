@@ -1,0 +1,21 @@
+name: Hello
+
+on:
+  push:
+    branches:
+      -  main
+
+
+jobs:
+  my_first_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking the repository
+        uses: actions/checkout@v4
+
+      - name: Install nodejs npm
+        run: sudo apt install -y nodejs npm
+
+      - name: Start script
+        run: node hello.js
